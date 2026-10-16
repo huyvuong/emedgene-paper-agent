@@ -1,0 +1,140 @@
+{
+  "pmid": "11359211",
+  "title": "De Novo Mutations in the Sodium-Channel Gene SCN1A Cause Severe",
+  "source_type": "pdf_pypdf",
+  "pubtator_entities": [],
+  "assertions": [
+    {
+      "assertion_id": "ASN-001",
+      "pmid": "11359211",
+      "section": "Case_Report",
+      "gene_symbol": "SCN1A",
+      "variant": {
+        "cdna_change": "c.3733C>T",
+        "protein_change": "p.Arg1245Ter",
+        "transcript": "NM_001165963.4",
+        "zygosity": "heterozygous",
+        "origin": "de_novo",
+        "functional_domain": "Exon 19"
+      },
+      "disease_name": "Dravet syndrome",
+      "phenotypes": [
+        "febrile seizures",
+        "myoclonic seizures",
+        "ataxia",
+        "severe intellectual disability"
+      ],
+      "proband_count": 1,
+      "functional_assay_result": null,
+      "acmg_tags": [
+        {
+          "code": "PVS1",
+          "justification": "Null nonsense variant (p.Arg1245Ter) in SCN1A where loss of function is a well-established mechanism of Dravet syndrome."
+        },
+        {
+          "code": "PS2",
+          "justification": "De novo variant in Patient SMEI-1 with both parents testing negative and paternity genetically confirmed."
+        }
+      ],
+      "verbatim_quote": "In Patient SMEI-1, we identified a de novo heterozygous nonsense mutation c.3733C>T (p.Arg1245Ter) in exon 19.",
+      "grounded_gene": {
+        "raw_text": "SCN1A",
+        "canonical_id": "HGNC:10585",
+        "label": "sodium voltage-gated channel alpha subunit 1"
+      },
+      "grounded_disease": {
+        "raw_text": "Dravet syndrome",
+        "canonical_id": "MONDO:0100135",
+        "label": "Dravet syndrome"
+      },
+      "grounded_phenotypes": [
+        {
+          "raw_text": "febrile seizures",
+          "canonical_id": "HP:0002373",
+          "label": "Febrile seizure (within the age range of 3 months to 6 years)"
+        },
+        {
+          "raw_text": "myoclonic seizures",
+          "canonical_id": "HP:0011166",
+          "label": "Focal myoclonic seizure"
+        },
+        {
+          "raw_text": "ataxia",
+          "canonical_id": "HP:0001251",
+          "label": "Ataxia"
+        },
+        {
+          "raw_text": "severe intellectual disability",
+          "canonical_id": "HP:0010864",
+          "label": "Severe intellectual disability"
+        }
+      ],
+      "quote_verified": true
+    },
+    {
+      "assertion_id": "ASN-002",
+      "pmid": "11359211",
+      "section": "Case_Report",
+      "gene_symbol": "SCN1A",
+      "variant": {
+        "cdna_change": "c.2216G>A",
+        "protein_change": "p.Arg739Gln",
+        "transcript": "NM_001165963.4",
+        "zygosity": "heterozygous",
+        "origin": "de_novo",
+        "functional_domain": "S4 transmembrane voltage-sensor segment of domain II"
+      },
+      "disease_name": "Dravet syndrome",
+      "phenotypes": [
+        "febrile status epilepticus",
+        "generalized tonic-clonic seizures",
+        "moderate cognitive impairment"
+      ],
+      "proband_count": 1,
+      "functional_assay_result": "Whole-cell patch-clamp recordings in HEK293 cells expressing mutant SCN1A p.Arg739Gln demonstrated complete loss of functional sodium current density compared to wild-type NaV1.1 channels.",
+      "acmg_tags": [
+        {
+          "code": "PS2",
+          "justification": "Confirmed de novo heterozygous variant; neither parent carried the c.2216G>A alteration and paternity was confirmed."
+        },
+        {
+          "code": "PM1",
+          "justification": "Located within the highly conserved S4 transmembrane voltage-sensor segment of domain II."
+        },
+        {
+          "code": "PS3",
+          "justification": "Whole-cell patch-clamp recordings in HEK293 cells demonstrated complete loss of functional sodium current density."
+        }
+      ],
+      "verbatim_quote": "In Patient SMEI-2, direct sequencing revealed a de novo heterozygous missense substitution c.2216G>A (p.Arg739Gln) located within the highly conserved S4 transmembrane voltage-sensor segment of domain II.",
+      "grounded_gene": {
+        "raw_text": "SCN1A",
+        "canonical_id": "HGNC:10585",
+        "label": "sodium voltage-gated channel alpha subunit 1"
+      },
+      "grounded_disease": {
+        "raw_text": "Dravet syndrome",
+        "canonical_id": "MONDO:0100135",
+        "label": "Dravet syndrome"
+      },
+      "grounded_phenotypes": [
+        {
+          "raw_text": "febrile status epilepticus",
+          "canonical_id": "HP:0032656",
+          "label": "Febrile status epilepticus"
+        },
+        {
+          "raw_text": "generalized tonic-clonic seizures",
+          "canonical_id": "HP:0025190",
+          "label": "Bilateral tonic-clonic seizure with generalized onset"
+        },
+        {
+          "raw_text": "moderate cognitive impairment",
+          "canonical_id": "HP:0002342",
+          "label": "Moderate intellectual disability"
+        }
+      ],
+      "quote_verified": true
+    }
+  ]
+}
