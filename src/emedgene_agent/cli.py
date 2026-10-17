@@ -5,6 +5,10 @@ import asyncio
 import sys
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+load_dotenv(override=True)
+
 from emedgene_agent.extractor import extract_gdvp_from_article
 from emedgene_agent.grounder import BiomedicalGrounder
 from emedgene_agent.mcp_server import (
@@ -28,7 +32,7 @@ from emedgene_agent.schemas import PaperKnowledgeBase
 async def run_pipeline(
     pmid: str | None = None,
     pdf_path: str | None = None,
-    model: str = "gemini-2.5-flash",
+    model: str = "gemini-3.8-flash",
     output_json: str | None = None,
 ) -> PaperKnowledgeBase:
     """Execute the end-to-end Parse -> NLP Extract -> Ontology Ground pipeline."""

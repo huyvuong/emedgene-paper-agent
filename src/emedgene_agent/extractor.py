@@ -3,8 +3,11 @@
 import os
 import re
 
+from dotenv import load_dotenv
 from google import genai
 from google.genai import types
+
+load_dotenv(override=True)
 
 from emedgene_agent.schemas import (
     ACMGEvidenceTag,
@@ -217,7 +220,7 @@ def extract_gdvp_from_article(
     pmid: str,
     title: str,
     text: str,
-    model: str = "gemini-2.5-flash",
+    model: str = "gemini-3.8-flash",
     source_type: str = "curated_excerpt",
     pubtator_entities: list[PubTatorEntity] | None = None,
     use_fallback_if_no_key: bool = True,
@@ -225,11 +228,11 @@ def extract_gdvp_from_article(
     """
     Extract structured GDVP assertions from peer-reviewed text using Gemini Structured Outputs,
     enriched with candidate PubTator3 NER annotations when available.
-    Falls back to deterministic heuristic extraction if GEMINI_API_KEY is not set and
-    `use_fallback_if_no_key=True`.
+    Falls back to deterministic heuristic extraction if GEMINI_API_KEY is not set, invalid,
+    or if `use_fallback_if_no_key=True`.
     """
     api_key = os.environ.get("GEMINI_API_KEY")
-    if not api_key:
+    if not api_key or api_key in ("your_gemini_api_key_here", "your_api_key_here", "<your_api_key>"):
         if use_fallback_if_no_key:
             return _extract_gdvp_heuristic(
                 pmid=pmid,
@@ -239,7 +242,7 @@ def extract_gdvp_from_article(
                 pubtator_entities=pubtator_entities,
             )
         raise OSError(
-            "GEMINI_API_KEY environment variable is not set. Set GEMINI_API_KEY or run with fallback enabled."
+            "GEMINI_API_KEY environment variable is not set. Set GEMINI_API_KEY in .env or run with fallback enabled."
         )
 
     pubtator_context = ""
@@ -250,24 +253,39 @@ def extract_gdvp_from_article(
         )
         pubtator_context = f"\nCandidate PubTator3 NER Entities:\n{formatted_ents}\n"
 
-    client = genai.Client(api_key=api_key)
-    response = client.models.generate_content(
-        model=model,
-        contents=(
-            f"PMID: {pmid}\n"
-            f"Title: {title}\n"
-            f"{pubtator_context}\n"
-            f"Article Text:\n{text}"
-        ),
-        config=types.GenerateContentConfig(
-            system_instruction=EXTRACTION_SYSTEM_PROMPT,
-            response_mime_type="application/json",
-            response_schema=PaperKnowledgeBase,
-            temperature=0.0,
-        ),
-    )
-    kb = PaperKnowledgeBase.model_validate_json(response.text)
-    kb.source_type = source_type
-    if pubtator_entities and not kb.pubtator_entities:
-        kb.pubtator_entities = pubtator_entities
-    return kb
+    try:
+        client = genai.Client(api_key=api_key)
+        response = client.models.generate_content(
+            model=model,
+            contents=(
+                f"PMID: {pmid}\n"
+                f"Title: {title}\n"
+                f"{pubtator_context}\n"
+                f"Article Text:\n{text}"
+            ),
+            config=types.GenerateContentConfig(
+                system_instruction=EXTRACTION_SYSTEM_PROMPT,
+                response_mime_type="application/json",
+                response_schema=PaperKnowledgeBase,
+                temperature=0.0,
+            ),
+        )
+        kb = PaperKnowledgeBase.model_validate_json(response.text)
+        kb.source_type = source_type
+        if pubtator_entities and not kb.pubtator_entities:
+            kb.pubtator_entities = pubtator_entities
+        return kb
+    except Exception as exc:
+        if use_fallback_if_no_key:
+            print(
+                f"      -> [Warning] Gemini API call failed ({exc.__class__.__name__}: {exc}).\n"
+                f"         Falling back to deterministic extraction..."
+            )
+            return _extract_gdvp_heuristic(
+                pmid=pmid,
+                title=title,
+                text=text,
+                source_type=source_type,
+                pubtator_entities=pubtator_entities,
+            )
+        raise

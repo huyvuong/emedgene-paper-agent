@@ -112,7 +112,7 @@ Extract directly from the included multi-section clinical PDF (`samples/PMID_113
 ```bash
 python paper_to_gdvp_agent.py \
   --pdf samples/PMID_11359211_SCN1A_Dravet.pdf \
-  --query-variant c.2216G>A \
+  --query-variant "c.2216G>A" \
   --output samples/expected_output_11359211.json
 ```
 
