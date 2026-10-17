@@ -29,6 +29,7 @@ Rules:
    - PS3: Well-established in vitro or in vivo functional studies supportive of a damaging effect.
    - PM1: Located in a mutational hot spot and/or critical and well-established functional domain.
 3. The `verbatim_quote` MUST be copied character-for-character from the source text.
+4. Must normalize phenotypes to concise standard HPO terms (e.g., "prefer standard clinical phenotype terms like 'febrile seizures' rather than complex multi-modifier phrases").
 """
 
 

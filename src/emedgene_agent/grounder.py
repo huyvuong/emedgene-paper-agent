@@ -51,7 +51,7 @@ class BiomedicalGrounder:
             "size": 1,
         }
         try:
-            resp = await client.get(cls.MYGENE_QUERY_URL, params=params, timeout=8.0)
+            resp = await client.get(cls.MYGENE_QUERY_URL, params=params, timeout=15.0)
             resp.raise_for_status()
             hits = resp.json().get("hits", [])
             if hits:
