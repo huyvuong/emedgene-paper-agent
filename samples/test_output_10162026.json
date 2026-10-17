@@ -1,0 +1,183 @@
+{
+  "pmid": "11359211",
+  "title": "De Novo Mutations in the Sodium-Channel Gene SCN1A Cause Severe Myoclonic Epilepsy of Infancy",
+  "source_type": "pdf_pypdf",
+  "pubtator_entities": [
+    {
+      "text": "SCN1A",
+      "entity_type": "Gene",
+      "identifier": "6323",
+      "section": "Abstract"
+    },
+    {
+      "text": "Severe myoclonic epilepsy of infancy",
+      "entity_type": "Disease",
+      "identifier": "MESH:D000080342",
+      "section": "Abstract"
+    },
+    {
+      "text": "Dravet syndrome",
+      "entity_type": "Disease",
+      "identifier": "MESH:D000080342",
+      "section": "Abstract"
+    },
+    {
+      "text": "c.3733C>T",
+      "entity_type": "Mutation",
+      "identifier": "tmVar:c|SUB|C|3733|T",
+      "section": "Case_Report"
+    },
+    {
+      "text": "p.Arg1245Ter",
+      "entity_type": "Mutation",
+      "identifier": "tmVar:p|SUB|Arg|1245|Ter",
+      "section": "Case_Report"
+    },
+    {
+      "text": "c.2216G>A",
+      "entity_type": "Mutation",
+      "identifier": "tmVar:c|SUB|G|2216|A",
+      "section": "Case_Report"
+    },
+    {
+      "text": "p.Arg739Gln",
+      "entity_type": "Mutation",
+      "identifier": "tmVar:p|SUB|Arg|739|Gln",
+      "section": "Case_Report"
+    }
+  ],
+  "assertions": [
+    {
+      "assertion_id": "ASN-001",
+      "pmid": "11359211",
+      "section": "Case_Report",
+      "gene_symbol": "SCN1A",
+      "variant": {
+        "cdna_change": "c.3733C>T",
+        "protein_change": "p.Arg1245Ter",
+        "transcript": "NM_001165963.4",
+        "zygosity": "heterozygous",
+        "origin": "de_novo",
+        "functional_domain": null
+      },
+      "disease_name": "Dravet syndrome",
+      "phenotypes": [
+        "febrile seizures",
+        "myoclonic seizures",
+        "ataxia",
+        "intellectual disability"
+      ],
+      "proband_count": 1,
+      "functional_assay_result": null,
+      "acmg_tags": [
+        {
+          "code": "PVS1",
+          "justification": "Nonsense variant (p.Arg1245Ter) leading to premature termination in SCN1A, a gene where loss of function is an established mechanism of disease."
+        },
+        {
+          "code": "PS2",
+          "justification": "De novo occurrence confirmed with maternity and paternity verified in a proband with Dravet syndrome."
+        }
+      ],
+      "verbatim_quote": "In Patient SMEI-1, we identified a de novo heterozygous nonsense mutation c.3733C>T (p.Arg1245Ter) in exon 19.",
+      "grounded_gene": {
+        "raw_text": "SCN1A",
+        "canonical_id": "HGNC:10585",
+        "label": "sodium voltage-gated channel alpha subunit 1"
+      },
+      "grounded_disease": {
+        "raw_text": "Dravet syndrome",
+        "canonical_id": "MONDO:0100135",
+        "label": "Dravet syndrome"
+      },
+      "grounded_phenotypes": [
+        {
+          "raw_text": "febrile seizures",
+          "canonical_id": "HP:0002373",
+          "label": "Febrile seizure (within the age range of 3 months to 6 years)"
+        },
+        {
+          "raw_text": "myoclonic seizures",
+          "canonical_id": "HP:0011166",
+          "label": "Focal myoclonic seizure"
+        },
+        {
+          "raw_text": "ataxia",
+          "canonical_id": "HP:0001251",
+          "label": "Ataxia"
+        },
+        {
+          "raw_text": "intellectual disability",
+          "canonical_id": "HP:0001249",
+          "label": "Intellectual disability"
+        }
+      ],
+      "quote_verified": true
+    },
+    {
+      "assertion_id": "ASN-002",
+      "pmid": "11359211",
+      "section": "Case_Report",
+      "gene_symbol": "SCN1A",
+      "variant": {
+        "cdna_change": "c.2216G>A",
+        "protein_change": "p.Arg739Gln",
+        "transcript": "NM_001165963.4",
+        "zygosity": "heterozygous",
+        "origin": "de_novo",
+        "functional_domain": "S4 transmembrane voltage-sensor segment of domain II"
+      },
+      "disease_name": "Dravet syndrome",
+      "phenotypes": [
+        "febrile status epilepticus",
+        "generalized tonic-clonic seizures",
+        "cognitive impairment"
+      ],
+      "proband_count": 1,
+      "functional_assay_result": "Whole-cell patch-clamp recordings demonstrated a complete loss of functional sodium current density compared to wild-type channels, confirming loss of function.",
+      "acmg_tags": [
+        {
+          "code": "PS2",
+          "justification": "De novo status confirmed by testing both parents and confirming paternity in an affected individual."
+        },
+        {
+          "code": "PS3",
+          "justification": "In vitro electrophysiological patch-clamp analysis showed complete loss of functional sodium current density."
+        },
+        {
+          "code": "PM1",
+          "justification": "Variant is located within the functionally critical and conserved S4 transmembrane voltage-sensor domain."
+        }
+      ],
+      "verbatim_quote": "In Patient SMEI-2, direct sequencing revealed a de novo heterozygous missense substitution c.2216G>A (p.Arg739Gln) located within the highly conserved S4 transmembrane voltage-sensor segment of domain II.",
+      "grounded_gene": {
+        "raw_text": "SCN1A",
+        "canonical_id": "HGNC:10585",
+        "label": "sodium voltage-gated channel alpha subunit 1"
+      },
+      "grounded_disease": {
+        "raw_text": "Dravet syndrome",
+        "canonical_id": "MONDO:0100135",
+        "label": "Dravet syndrome"
+      },
+      "grounded_phenotypes": [
+        {
+          "raw_text": "febrile status epilepticus",
+          "canonical_id": "HP:0032656",
+          "label": "Febrile status epilepticus"
+        },
+        {
+          "raw_text": "generalized tonic-clonic seizures",
+          "canonical_id": "HP:0025190",
+          "label": "Bilateral tonic-clonic seizure with generalized onset"
+        },
+        {
+          "raw_text": "cognitive impairment",
+          "canonical_id": "HP:0100543",
+          "label": "Cognitive impairment"
+        }
+      ],
+      "quote_verified": true
+    }
+  ]
+}
